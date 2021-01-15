@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MarsRover.Services.Engine
 {
-    public abstract class EngineService : Movement, IEngineService
+    public class EngineService : Movement, IEngineService
     {
         public Vehicle Start(VehicleRoute vehicleRoute)
         {

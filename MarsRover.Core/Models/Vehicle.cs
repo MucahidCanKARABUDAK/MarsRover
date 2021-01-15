@@ -7,6 +7,11 @@ namespace MarsRover.Core.Models
 {
     public class Vehicle
     {
+        public Vehicle()
+        {
+            if (this.Coordination == null)
+                this.Coordination = new Coordination();
+        }
         public Directions Direction { get; set; }
         public Coordination Coordination { get; set; }
     }
