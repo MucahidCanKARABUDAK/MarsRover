@@ -9,9 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1AE40929-D960-4C83-913C-C6F49F59F893}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRover.Core", "MarsRover.Core\MarsRover.Core.csproj", "{9FA98D9B-721C-499C-8271-82ABAEC1242A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRover.Core", "MarsRover.Core\MarsRover.Core.csproj", "{9FA98D9B-721C-499C-8271-82ABAEC1242A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRover.App", "MarsRover.App\MarsRover.App.csproj", "{E160247C-74B4-490C-A2B3-EA3BCE20BF8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRover.App", "MarsRover.App\MarsRover.App.csproj", "{E160247C-74B4-490C-A2B3-EA3BCE20BF8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRover.Services", "MarsRover.Services\MarsRover.Services.csproj", "{37AF9C33-CB6E-40C2-A3AC-86A5880B463D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{E160247C-74B4-490C-A2B3-EA3BCE20BF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E160247C-74B4-490C-A2B3-EA3BCE20BF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E160247C-74B4-490C-A2B3-EA3BCE20BF8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37AF9C33-CB6E-40C2-A3AC-86A5880B463D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37AF9C33-CB6E-40C2-A3AC-86A5880B463D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37AF9C33-CB6E-40C2-A3AC-86A5880B463D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37AF9C33-CB6E-40C2-A3AC-86A5880B463D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9FA98D9B-721C-499C-8271-82ABAEC1242A} = {06AEB276-6B8F-428D-8593-09CBF3D51142}
 		{E160247C-74B4-490C-A2B3-EA3BCE20BF8A} = {523089B0-C571-46DF-AA75-B249659612C3}
+		{37AF9C33-CB6E-40C2-A3AC-86A5880B463D} = {06AEB276-6B8F-428D-8593-09CBF3D51142}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8111B36-51EB-4E89-8B37-65EB49CD8A22}

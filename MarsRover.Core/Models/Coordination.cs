@@ -4,9 +4,14 @@ using System.Text;
 
 namespace MarsRover.Core.Models
 {
-    public class Coordination
+    public class Coordination : Map
     {
-        public int Xaxis { get; set; }
-        public int Yaxis { get; set; }
+        public Coordination(byte xAxis, byte yAxis)
+        {
+            this.Xaxis = xAxis;
+            this.Yaxis = yAxis;
+        }
+        public byte Xaxis { get; set; }
+        public byte Yaxis { get; set; }
     }
 }

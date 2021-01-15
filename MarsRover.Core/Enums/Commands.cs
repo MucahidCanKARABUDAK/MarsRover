@@ -4,11 +4,10 @@ using System.Text;
 
 namespace MarsRover.Core.Enums
 {
-    public enum Directions
+    public enum Commands
     {
-        North = 'N',
-        South = 'S',
-        East = 'E',
-        West = 'W'
+        Move = 'M',
+        Right = 'R',
+        Left = 'L'
     }
 }

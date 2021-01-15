@@ -6,6 +6,6 @@ namespace MarsRover.Core.Models
 {
     public class Map 
     {
-        public int[,] MapRange { get; set; }
+        public byte[,] MapRange { get; set; }
     }
 }
