@@ -8,6 +8,7 @@ namespace MarsRover.Core.Enums.Messages
     {
         FillTheFirstInput,
         FillTheSecondInput,
-        FillTheThirdInput
+        FillTheThirdInput,
+        ExitOrContinue
     }
 }

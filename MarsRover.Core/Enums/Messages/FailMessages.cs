@@ -4,8 +4,8 @@ using System.Text;
 
 namespace MarsRover.Core.Enums.Messages
 {
-    public enum SuccessMessages
+    public enum FailMessages
     {
-        EverythingsOkay
+        VehicleWentOffRoute
     }
 }

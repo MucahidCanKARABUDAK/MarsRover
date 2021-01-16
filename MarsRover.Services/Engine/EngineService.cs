@@ -1,4 +1,6 @@
-﻿using MarsRover.Core.Enums;
+﻿using MarsRover.Core;
+using MarsRover.Core.Enums;
+using MarsRover.Core.Enums.Messages;
 using MarsRover.Core.Models;
 using MarsRover.Services.Physics;
 using System;
@@ -32,7 +34,22 @@ namespace MarsRover.Services.Engine
                 }
             }
 
-            return new ResultModel();
+            ResultModel result = new ResultModel();
+
+            if (vehicle.Coordination.Xaxis <= vehicle.Coordination.MapRange[0,0] && vehicle.Coordination.Xaxis > 0 &&
+                vehicle.Coordination.Yaxis <= vehicle.Coordination.MapRange[0, 1] && vehicle.Coordination.Yaxis > 0)
+            {
+                result.Type = ResultTypes.Success;
+                result.Message = string.Format("{0} : {1}", Helper.GetMessage(SuccessMessages.EverythingsOkay), 
+                    string.Format("{0} {1} {2}", vehicle.Coordination.Xaxis, vehicle.Coordination.Yaxis, (char)vehicle.Direction));
+            }
+            else
+            {
+                result.Type = ResultTypes.Fail;
+                result.Message = Helper.GetMessage(FailMessages.VehicleWentOffRoute);
+            }
+
+            return result;
         }
         protected override Coordination MoveForward(Vehicle vehicle)
         {

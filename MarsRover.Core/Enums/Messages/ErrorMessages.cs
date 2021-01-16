@@ -6,6 +6,14 @@ namespace MarsRover.Core.Enums.Messages
 {
     public enum ErrorMessages
     {
-
+        UnexpectedError,
+        InputCantBeNull,
+        WrongCommandType,
+        NeedThreeInputForCoordination,
+        ShouldBeNumber,
+        CoordinationsWereOutOfBounds,
+        WrongTypeOfDirection,
+        NeedTwoInputForMapRange,
+        MapRangesWereOutOfBounds
     }
 }

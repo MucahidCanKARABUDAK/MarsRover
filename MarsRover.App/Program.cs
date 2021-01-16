@@ -11,22 +11,37 @@ namespace MarsRover.App
     {
         static void Main(string[] args)
         {
-            RequestModel request = new RequestModel();
-            var container = Startup.ConfigureService();
-            var engineController = container.GetRequiredService<EngineController>();
+            try
+            {
+                var container = Startup.ConfigureService();
+                var engineController = container.GetRequiredService<EngineController>();
+                RequestModel request;
 
-            Console.WriteLine(Helper.GetMessage(InfoMessages.FillTheFirstInput));
-            request.MapRange = Console.ReadLine();
+                while (true)
+                {
+                    request = new RequestModel();
 
-            Console.WriteLine(Helper.GetMessage(InfoMessages.FillTheSecondInput));
-            request.Coordination = Console.ReadLine();
+                    Console.WriteLine(Helper.GetMessage(InfoMessages.FillTheFirstInput));
+                    request.MapRange = Console.ReadLine();
 
-            Console.WriteLine(Helper.GetMessage(InfoMessages.FillTheThirdInput));
-            request.Commands = Console.ReadLine();
+                    Console.WriteLine(Helper.GetMessage(InfoMessages.FillTheSecondInput));
+                    request.Coordination = Console.ReadLine();
 
-            ResultModel result = engineController.Start(request);
+                    Console.WriteLine(Helper.GetMessage(InfoMessages.FillTheThirdInput));
+                    request.Commands = Console.ReadLine();
 
-            Console.WriteLine(result.Message);
+                    Console.WriteLine("\n" + engineController.Start(request).Message + "\n");
+
+                    Console.WriteLine(Helper.GetMessage(InfoMessages.ExitOrContinue));
+                    if (Console.ReadLine().ToUpper() == "D")
+                        Environment.Exit(-1);
+                }
+            }
+            catch
+            {
+                //We should log the error in here
+                Console.WriteLine(Helper.GetMessage(ErrorMessages.UnexpectedError));
+            }
         }
     }
 }

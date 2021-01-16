@@ -1,4 +1,6 @@
-﻿using MarsRover.Core.Models;
+﻿using MarsRover.Core;
+using MarsRover.Core.Enums;
+using MarsRover.Core.Models;
 using MarsRover.Services.Engine;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,9 @@ namespace MarsRover.App.Controller
 
         public ResultModel Start(RequestModel request)
         {
+            var checkedModel = Helper.CheckRequestModel(request);
+            if (checkedModel.Type != ResultTypes.Success)
+                return checkedModel;
 
             return _engineService.Start(new VehicleRoute(request));
         }
