@@ -9,7 +9,7 @@ namespace MarsRover.Services.Engine
 {
     public class EngineService : Movement, IEngineService
     {
-        public Vehicle Start(VehicleRoute vehicleRoute)
+        public ResultModel Start(VehicleRoute vehicleRoute)
         {
             Vehicle vehicle = vehicleRoute.Vehicle;
 
@@ -32,7 +32,7 @@ namespace MarsRover.Services.Engine
                 }
             }
 
-            return vehicle;
+            return new ResultModel();
         }
         protected override Coordination MoveForward(Vehicle vehicle)
         {

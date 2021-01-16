@@ -6,11 +6,11 @@ namespace MarsRover.Core.Models
 {
     public class VehicleRoute
     {
-        public VehicleRoute(string mapRange, string coordination, string commands)
+        public VehicleRoute(RequestModel requestModel)
         {
-            this.Commands = commands;
+            this.Commands = requestModel.Commands;
             if (this.Vehicle == null)
-                this.Vehicle = Helper.CreateVehicleModel(coordination, mapRange);
+                this.Vehicle = Helper.CreateVehicleModel(requestModel.Coordination, requestModel.MapRange);
         }
         public string Commands { get; set; }
         public Vehicle Vehicle { get; set; }

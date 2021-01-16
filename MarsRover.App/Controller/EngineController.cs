@@ -14,9 +14,10 @@ namespace MarsRover.App.Controller
             _engineService = engineService;
         }
 
-        public Vehicle Start(VehicleRoute vehicleRoute)
+        public ResultModel Start(RequestModel request)
         {
-            return _engineService.Start(vehicleRoute);
+
+            return _engineService.Start(new VehicleRoute(request));
         }
     }
 }

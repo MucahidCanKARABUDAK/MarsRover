@@ -1,6 +1,7 @@
 ﻿using MarsRover.App.Controller;
+using MarsRover.Core;
+using MarsRover.Core.Enums.Messages;
 using MarsRover.Core.Models;
-using MarsRover.Services.Engine;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
@@ -10,16 +11,22 @@ namespace MarsRover.App
     {
         static void Main(string[] args)
         {
+            RequestModel request = new RequestModel();
             var container = Startup.ConfigureService();
             var engineController = container.GetRequiredService<EngineController>();
 
-            var mapRange = Console.ReadLine();
-            var coordination = Console.ReadLine();
-            var commands = Console.ReadLine();
+            Console.WriteLine(Helper.GetMessage(InfoMessages.FillTheFirstInput));
+            request.MapRange = Console.ReadLine();
 
-            Vehicle vehicle = engineController.Start(new VehicleRoute(mapRange,coordination,commands));
+            Console.WriteLine(Helper.GetMessage(InfoMessages.FillTheSecondInput));
+            request.Coordination = Console.ReadLine();
 
-            Console.WriteLine(vehicle.Coordination.Xaxis.ToString() + vehicle.Coordination.Yaxis.ToString() + (char)vehicle.Direction);
+            Console.WriteLine(Helper.GetMessage(InfoMessages.FillTheThirdInput));
+            request.Commands = Console.ReadLine();
+
+            ResultModel result = engineController.Start(request);
+
+            Console.WriteLine(result.Message);
         }
     }
 }

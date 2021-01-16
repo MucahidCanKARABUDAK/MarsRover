@@ -7,6 +7,6 @@ namespace MarsRover.Services.Engine
 {
     public interface IEngineService
     {
-        public Vehicle Start(VehicleRoute vehicleRoute);
+        public ResultModel Start(VehicleRoute vehicleRoute);
     }
 }
